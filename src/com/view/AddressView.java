@@ -5,6 +5,8 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.plaf.*;
 
+import com.manage.*;
+
 public class AddressView extends JFrame implements ActionListener{
 
 	JFrame f = new JFrame("小容帮你改地址");
@@ -48,9 +50,18 @@ public class AddressView extends JFrame implements ActionListener{
 	         // 设置文本显示效果
 	         UIManager.put("OptionPane.messageFont", new FontUIResource(font));
 	         JOptionPane.showMessageDialog(f, "去json文件看看！");
-	         System.out.println(jta.getText());
+	         
+	        process();
+	        
+	        
 	        } 
 		
 	}
-
+	private void process(){
+		 //传递从文本框得出的文件
+        /*UserInfo message= new UserInfo();
+        //message.setTotalMessage(jta.getText());*/
+		Util util=new Util();
+		util.separateTotalInfo(jta.getText());
+	}
 }
