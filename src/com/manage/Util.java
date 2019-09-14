@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import com.google.gson.*;
+
 
 public class Util {
 	
@@ -12,12 +14,14 @@ public class Util {
 		
 		//把信息取出来
 		String[] info = totalAddress.split(".\n");
-	
-		List<UserInfo> userList=new ArrayList<>(7);
+		//System.out.println(info.length);
+		List<UserInfo> userList=new ArrayList<>();
 		for(int i=0;i<info.length;i++){
 			
-			//删除第一个字符是回车的问题（/r/n好像有点问题）
-			info[i]=info[i].substring(1,info[i].length());
+			//删除第一个字符是回车的问题
+			if(String.valueOf(info[i].charAt(0)).equals("\n")){
+				info[i]=info[i].substring(1,info[i].length());
+			}
 			//&&info[i].endsWith(".") 防止最后有无空格
 			if(i==info.length-1&&info[i].endsWith(".")){
 				//处理最后一个字符.没被删除的问题
@@ -39,6 +43,10 @@ public class Util {
 		}
 		totalInfo.setAddressBook(userList);
 		
+		Gson gson=new Gson();
+		
+		String res=gson.toJson(totalInfo);
+		System.out.println(res);
 	
 	}
 	private String getName(String info){
@@ -78,7 +86,6 @@ public class Util {
 	            province=matcher.group("province");
 	            addressList.add(province==null?"":province.trim());
 	          
-		 
 	            city=matcher.group("city");
 	            addressList.add(city==null?"":city.trim());
 	            
@@ -105,7 +112,7 @@ public class Util {
   		   String pro=addressList.get(1).substring(0,2);
   		   addressList.set(0,pro);
   	   	 }
-		 
+		 System.out.println(addressList.size());
 		 for(int i = 0; i < 7; i++)
          {   
 			

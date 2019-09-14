@@ -12,5 +12,11 @@ public class TotalInfo {
 	public void setAddressBook(List<UserInfo> addressBook) {
 		this.addressBook = addressBook;
 	}
+
+	@Override
+	public String toString() {
+		return "TotalInfo [addressBook=" + addressBook + "]";
+	}
+	
 	
 }
