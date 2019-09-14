@@ -53,18 +53,18 @@ public class Util {
 		System.out.println(res);
 	*/
 	}
-	private String getName(String info){
+	public String getName(String info){
 		String []message =info.split(",");
 		//System.out.println(name[0]);
 		return message[0];
 	}
-	private String separateName(String info){
+	public String separateName(String info){
 		//把名字从info里删除
 		String []message =info.split(",");
 		//System.out.println(message[1]);
 		return message[1];
 	}
-	private String getPhone(String info){
+	public String getPhone(String info){
 		Pattern pattern =Pattern.compile("\\d{11}");
 		Matcher matcher = pattern.matcher(info);
 		while(matcher.find()){
@@ -72,12 +72,12 @@ public class Util {
 		}
 		return "手机号丢失";
 	}
-	private String separatePhone(String info){
+	public String separatePhone(String info){
 		return info.replaceAll("\\d{11}","");
 		
 		
 	}
-	private List<String> getAddress(String info){ 
+	public List<String> getAddress(String info){ 
 		 List<String> addressList=new ArrayList<>();
 		 //String regex="(?<province>[^省]+自治区|.*?省|.*?行政区)?(?<city>[^市]+自治州|.*?地区|.*?行政单位|.+盟|市辖区|.*?市)?(?<county>[^县]+县|.+?区|.+市|.+旗|.+海域|.+岛)?(?<town>[^区]+镇|.+街道)?(?<village>.*)";
 		 String regex="(?<province>[^省]+自治区|.*?省|.*?行政区)?(?<city>[^市]+自治州|.*?地区|.*?行政单位|.+盟|市辖区|.*?市)?(?<dist>[^县]+县|.+?区|.+市|.+旗|.+海域|.+岛)?(?<town>[^区]+镇|.+街道|.+乡|.+县)?(?<village>[^村]+路|.+街|.+巷|.+道|.+段|.+队|.+弄|.+胡同|.+村|.+委会|.+开发区)?(?<number>[^区号]+号)?(?<road>.*)";
