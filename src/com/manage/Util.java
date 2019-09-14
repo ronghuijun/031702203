@@ -1,5 +1,8 @@
 package com.manage;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -9,12 +12,11 @@ import com.google.gson.*;
 
 public class Util {
 	
-	public void separateTotalInfo(String totalAddress){
+	public TotalInfo separateTotalInfo(String totalAddress){
 		TotalInfo totalInfo=new TotalInfo();
-		
-		//把信息取出来
 		String[] info = totalAddress.split(".\n");
-		//System.out.println(info.length);
+		System.out.print(info.length);
+		
 		List<UserInfo> userList=new ArrayList<>();
 		for(int i=0;i<info.length;i++){
 			
@@ -42,12 +44,14 @@ public class Util {
 			userList.add(userInfo);
 		}
 		totalInfo.setAddressBook(userList);
-		
+		return totalInfo;
+		//produceJsonFile(totalInfo);
+		/*
 		Gson gson=new Gson();
 		
 		String res=gson.toJson(totalInfo);
 		System.out.println(res);
-	
+	*/
 	}
 	private String getName(String info){
 		String []message =info.split(",");
@@ -81,7 +85,7 @@ public class Util {
 		 Pattern pattern=Pattern.compile(regex);
 		 Matcher matcher=pattern.matcher(info);
 		 String province=null,city=null,dist=null,town=null,village=null,number=null,road=null;
-		 while(matcher.find()){
+		 if(matcher.find()){
 	            
 	            province=matcher.group("province");
 	            addressList.add(province==null?"":province.trim());
@@ -121,5 +125,27 @@ public class Util {
          }
 		return addressList;
 	}
-	
+	public void produceJsonFile(TotalInfo totalInfo){
+		
+	//info[i]=info[i].substring(0,info[i].length()-1);
+		Gson gson=new Gson();
+		
+		String res=gson.toJson(totalInfo);
+		res=res.substring(15,res.length()-1);
+		System.out.println(res);
+		
+		String filePath="D:\\2.txt";
+		FileOutputStream fos;
+		try {
+			fos = new FileOutputStream(filePath);
+			fos.write(res.getBytes());
+			fos.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
 }
