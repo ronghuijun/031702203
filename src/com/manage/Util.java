@@ -125,7 +125,7 @@ public class Util {
          }
 		return addressList;
 	}
-	public void produceJsonFile(TotalInfo totalInfo){
+	public void produceJsonFile(TotalInfo totalInfo,String filePath){
 		
 	//info[i]=info[i].substring(0,info[i].length()-1);
 		Gson gson=new Gson();
@@ -134,7 +134,8 @@ public class Util {
 		res=res.substring(15,res.length()-1);
 		System.out.println(res);
 		
-		String filePath="D:\\2.txt";
+		//String filePath="D:\\2.txt";
+		String filepath=filePath;
 		FileOutputStream fos;
 		try {
 			fos = new FileOutputStream(filePath);

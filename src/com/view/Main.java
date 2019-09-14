@@ -24,8 +24,8 @@ public class Main {
 		  /*addressview =new AddressView();
 		  addressview.view();*/
 		   String total="";
-		   String fileName ="D:\\test.txt";
-		   //String fileName =args[0];
+		   //String fileName ="D:\\test.txt";
+		   String fileName =args[0];
 	        //FileReader fileReader = new FileReader(fileName);
 
 	        //BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -45,7 +45,7 @@ public class Main {
 	        System.out.println(total);
 	        Util util=new Util();
 			
-			util.produceJsonFile(util.separateTotalInfo(total));
+			util.produceJsonFile(util.separateTotalInfo(total),args[1]);
 	        //fileReader.close();
 
 	    
