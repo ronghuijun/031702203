@@ -3,9 +3,9 @@ package com.manage;
 import java.util.List;
 
 public class UserInfo {
-	
-	String 姓名;
-	String 手机;
+
+	private String 姓名;
+	private String 手机;
 	List<String> 地址;
 	public String get姓名() {
 		return 姓名;

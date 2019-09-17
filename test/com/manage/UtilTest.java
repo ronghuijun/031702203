@@ -44,7 +44,7 @@ public class UtilTest {
 		addressList.add("美西街");
 		addressList.add("41号");
 		addressList.add("青青饭店");
-		assertEquals(addressList,util.getAddress("福建省泉州市南安市霞美镇美西街41号青青饭店"));
+		assertEquals(addressList,util.getAddress("2","福建省泉州市南安市霞美镇美西街41号青青饭店"));
 	}
 	@Test
 	public void testGetAddress2() {
@@ -56,7 +56,7 @@ public class UtilTest {
 		addressList.add("美西街");
 		addressList.add("1号");
 		addressList.add("人民法院");
-		assertEquals(addressList,util.getAddress("北京市东城区东道口街道美西街1号人民法院"));
+		assertEquals(addressList,util.getAddress("2","北京市东城区东道口街道美西街1号人民法院"));
 	}
 	@Test
 	public void testGetAddress3() {
@@ -68,7 +68,7 @@ public class UtilTest {
 		addressList.add("楚河汉街");
 		addressList.add("1号");
 		addressList.add("万达广场");
-		assertEquals(addressList,util.getAddress("湖北省武汉市汉阳区老街道楚河汉街1号万达广场"));
+		assertEquals(addressList,util.getAddress("2","湖北省武汉市汉阳区老街道楚河汉街1号万达广场"));
 	}
 	@Test
 	public void testSeparateTotalInfo3() {
@@ -80,7 +80,7 @@ public class UtilTest {
 		addressList.add("学院路");
 		addressList.add("2号");
 		addressList.add("福州大学");
-		assertEquals(addressList,util.getAddress("福省福州市闽侯县上街镇学院路2号福州大学"));
+		assertEquals(addressList,util.getAddress("2","福省福州市闽侯县上街镇学院路2号福州大学"));
 	}
 	@Test
 	public void testSeparateTotalInfo2() {
@@ -92,7 +92,7 @@ public class UtilTest {
 		addressList.add("学院路");
 		addressList.add("2号");
 		addressList.add("福州大学");
-		assertEquals(addressList,util.getAddress("福建省福市闽侯县上街镇学院路2号福州大学"));
+		assertEquals(addressList,util.getAddress("2","福建省福市闽侯县上街镇学院路2号福州大学"));
 	}
 	@Test
 	public void testSeparateTotalInfo() {
@@ -104,6 +104,6 @@ public class UtilTest {
 		addressList.add("学院路");
 		addressList.add("2号");
 		addressList.add("福州大学");
-		assertEquals(addressList,util.getAddress("福建省福州市闽县上街镇学院路2号福州大学"));
+		assertEquals(addressList,util.getAddress("2","福建省福州市闽县上街镇学院路2号福州大学"));
 	}
 }

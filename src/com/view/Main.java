@@ -40,11 +40,10 @@ public class Main {
 	            total=total+line+"\n";
 	            line = bufferedReader.readLine();
 	        }
-	       
+	       Util util=new Util();
 	        bufferedReader.close();
-	        System.out.println(total);
-	        Util util=new Util();
-			
+	        //System.out.println(total);
+	       //util.produceJsonFile(util.separateTotalInfo(total),"1");
 			util.produceJsonFile(util.separateTotalInfo(total),args[1]);
 	        //fileReader.close();
 
