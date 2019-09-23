@@ -4,30 +4,30 @@ import java.util.List;
 
 public class UserInfo {
 
-	private String 姓名;
-	private String 手机;
-	List<String> 地址;
-	public String get姓名() {
-		return 姓名;
+	private String 濮撳悕;
+	private String 鎵嬫満;
+	List<String> 鍦板潃;
+	public String get濮撳悕() {
+		return 濮撳悕;
 	}
-	public void set姓名(String 姓名) {
-		this.姓名 = 姓名;
+	public void set濮撳悕(String 濮撳悕) {
+		this.濮撳悕 = 濮撳悕;
 	}
-	public String get手机() {
-		return 手机;
+	public String get鎵嬫満() {
+		return 鎵嬫満;
 	}
-	public void set手机(String 手机) {
-		this.手机 = 手机;
+	public void set鎵嬫満(String 鎵嬫満) {
+		this.鎵嬫満 = 鎵嬫満;
 	}
-	public List<String> get地址() {
-		return 地址;
+	public List<String> get鍦板潃() {
+		return 鍦板潃;
 	}
-	public void set地址(List<String> 地址) {
-		this.地址 = 地址;
+	public void set鍦板潃(List<String> 鍦板潃) {
+		this.鍦板潃 = 鍦板潃;
 	}
 	@Override
 	public String toString() {
-		return "UserInfo [姓名=" + 姓名 + ", 手机=" + 手机 + ", 地址=" + 地址 + "]";
+		return "UserInfo [濮撳悕=" + 濮撳悕 + ", 鎵嬫満=" + 鎵嬫満 + ", 鍦板潃=" + 鍦板潃 + "]";
 	}
 	
 	

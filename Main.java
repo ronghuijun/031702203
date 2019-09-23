@@ -1,4 +1,3 @@
-package com.view;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -18,7 +17,6 @@ import com.manage.*;
 
 public class Main {
 
-	private static AddressView addressview;
 	public static void main(String[] args)  throws IOException{
 		// TODO Auto-generated method stub
 		  /*addressview =new AddressView();

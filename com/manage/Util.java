@@ -19,17 +19,17 @@ public class Util {
 		
 		List<UserInfo> userList=new ArrayList<>();
 		for(int i=0;i<info.length;i++){
-			//ÅĞ¶ÏµØÖ·ÄÑ¶ÈµÈ¼¶
+			//åˆ¤æ–­åœ°å€éš¾åº¦ç­‰çº§
 			String level;
 			
-			//É¾³ıµÚÒ»¸ö×Ö·ûÊÇ»Ø³µµÄÎÊÌâ
+			//åˆ é™¤ç¬¬ä¸€ä¸ªå­—ç¬¦æ˜¯å›è½¦çš„é—®é¢˜
 			if(String.valueOf(info[i].charAt(0)).equals("\n")){
 				info[i]=info[i].substring(1,info[i].length());
 			}
 			
-			//&&info[i].endsWith(".") ·ÀÖ¹×îºóÓĞÎŞ¿Õ¸ñ
+			//&&info[i].endsWith(".") é˜²æ­¢æœ€åæœ‰æ— ç©ºæ ¼
 			if(i==info.length-1&&info[i].endsWith(".")){
-				//´¦Àí×îºóÒ»¸ö×Ö·û.Ã»±»É¾³ıµÄÎÊÌâ
+				//å¤„ç†æœ€åä¸€ä¸ªå­—ç¬¦.æ²¡è¢«åˆ é™¤çš„é—®é¢˜
 				info[i]=info[i].substring(0,info[i].length()-1);
 				//System.out.println(i+"cnsjla"+info[i]);
 			}
@@ -38,16 +38,16 @@ public class Util {
 			
 			UserInfo userInfo=new UserInfo();
 			
-			userInfo.setĞÕÃû(getName(info[i]));
+			userInfo.setå§“å(getName(info[i]));
 			info[i]=separateName(info[i]);
 			
-			userInfo.setÊÖ»ú(getPhone(info[i]));
+			userInfo.setæ‰‹æœº(getPhone(info[i]));
 			info[i]=separatePhone(info[i]);
 			
 			//System.out.println(info[i]);
 			//System.out.println();
 			
-			userInfo.setµØÖ·(getAddress(level,info[i]));
+			userInfo.setåœ°å€(getAddress(level,info[i]));
 			userList.add(userInfo);
 		}
 		totalInfo.setAddressBook(userList);
@@ -75,7 +75,7 @@ public class Util {
 		return message[0];
 	}
 	public String separateName(String info){
-		//°ÑÃû×Ö´ÓinfoÀïÉ¾³ı
+		//æŠŠåå­—ä»infoé‡Œåˆ é™¤
 		String []message =info.split(",");
 		//System.out.println(message[1]);
 		return message[1];
@@ -86,7 +86,7 @@ public class Util {
 		while(matcher.find()){
 			return matcher.group();
 		}
-		return "ÊÖ»úºÅ¶ªÊ§";
+		return "æ‰‹æœºå·ä¸¢å¤±";
 	}
 	public String separatePhone(String info){
 		return info.replaceAll("\\d{11}","");
@@ -99,8 +99,8 @@ public class Util {
 		
 		if(level.equals("1")){
 			
-			 String regex="(?<province>[^Ê¡]+×ÔÖÎÇø|.*?Ê¡|.*?ĞĞÕşÇø)?(?<city>[^ÊĞ]+×ÔÖÎÖİ|.*?µØÇø|.*?ĞĞÕşµ¥Î»|.+ÃË|ÊĞÏ½Çø|.*?ÊĞ)?(?<dist>[^ÏØ]+ÏØ|.+?Çø|.+ÊĞ|.+Æì|.+º£Óò|.+µº)?(?<town>[^Çø]+Õò|.+½ÖµÀ)?(?<village>.*)";
-			 //String regex="(?<province>[^Ê¡]+×ÔÖÎÇø|.*?Ê¡|.*?ĞĞÕşÇø)?(?<city>[^ÊĞ]+×ÔÖÎÖİ|.*?µØÇø|.*?ĞĞÕşµ¥Î»|.+ÃË|ÊĞÏ½Çø|.*?ÊĞ)?(?<dist>[^ÏØ]+ÏØ|.+?Çø|.+ÊĞ|.+Æì|.+º£Óò|.+µº)?(?<town>[^Çø]+Õò|.+½ÖµÀ|.+Ïç|.+ÏØ)?(?<village>[^´å]+Â·|.+½Ö|.+Ïï|.+µÀ|.+¶Î|.+¶Ó|.+Åª|.+ºúÍ¬|.+´å|.+Î¯»á|.+¿ª·¢Çø)?(?<number>[^ÇøºÅ]+ºÅ)?(?<road>.*)";
+			 String regex="(?<province>[^çœ]+è‡ªæ²»åŒº|.*?çœ|.*?è¡Œæ”¿åŒº)?(?<city>[^å¸‚]+è‡ªæ²»å·|.*?åœ°åŒº|.*?è¡Œæ”¿å•ä½|.+ç›Ÿ|å¸‚è¾–åŒº|.*?å¸‚)?(?<dist>[^å¿]+å¿|.+?åŒº|.+å¸‚|.+æ——|.+æµ·åŸŸ|.+å²›)?(?<town>[^åŒº]+é•‡|.+è¡—é“)?(?<village>.*)";
+			 //String regex="(?<province>[^çœ]+è‡ªæ²»åŒº|.*?çœ|.*?è¡Œæ”¿åŒº)?(?<city>[^å¸‚]+è‡ªæ²»å·|.*?åœ°åŒº|.*?è¡Œæ”¿å•ä½|.+ç›Ÿ|å¸‚è¾–åŒº|.*?å¸‚)?(?<dist>[^å¿]+å¿|.+?åŒº|.+å¸‚|.+æ——|.+æµ·åŸŸ|.+å²›)?(?<town>[^åŒº]+é•‡|.+è¡—é“|.+ä¹¡|.+å¿)?(?<village>[^æ‘]+è·¯|.+è¡—|.+å··|.+é“|.+æ®µ|.+é˜Ÿ|.+å¼„|.+èƒ¡åŒ|.+æ‘|.+å§”ä¼š|.+å¼€å‘åŒº)?(?<number>[^åŒºå·]+å·)?(?<road>.*)";
 				
 			 Pattern pattern=Pattern.compile(regex);
 			 Matcher matcher=pattern.matcher(info);
@@ -127,8 +127,8 @@ public class Util {
 		}
 		else{
 		
-			 //String regex="(?<province>[^Ê¡]+×ÔÖÎÇø|.*?Ê¡|.*?ĞĞÕşÇø)?(?<city>[^ÊĞ]+×ÔÖÎÖİ|.*?µØÇø|.*?ĞĞÕşµ¥Î»|.+ÃË|ÊĞÏ½Çø|.*?ÊĞ)?(?<county>[^ÏØ]+ÏØ|.+?Çø|.+ÊĞ|.+Æì|.+º£Óò|.+µº)?(?<town>[^Çø]+Õò|.+½ÖµÀ)?(?<village>.*)";
-			 String regex="(?<province>[^Ê¡]+×ÔÖÎÇø|.*?Ê¡|.*?ĞĞÕşÇø)?(?<city>[^ÊĞ]+×ÔÖÎÖİ|.*?µØÇø|.*?ĞĞÕşµ¥Î»|.+ÃË|ÊĞÏ½Çø|.*?ÊĞ)?(?<dist>[^ÏØ]+ÏØ|.+?Çø|.+ÊĞ|.+Æì|.+º£Óò|.+µº)?(?<town>[^Çø]+Õò|.+½ÖµÀ|.+Ïç|.+ÏØ)?(?<village>[^´å]+Â·|.+½Ö|.+Ïï|.+µÀ|.+¶Î|.+¶Ó|.+Åª|.+ºúÍ¬|.+´å|.+Î¯»á|.+¿ª·¢Çø)?(?<number>[^ÇøºÅ]+ºÅ)?(?<road>.*)";
+			 //String regex="(?<province>[^çœ]+è‡ªæ²»åŒº|.*?çœ|.*?è¡Œæ”¿åŒº)?(?<city>[^å¸‚]+è‡ªæ²»å·|.*?åœ°åŒº|.*?è¡Œæ”¿å•ä½|.+ç›Ÿ|å¸‚è¾–åŒº|.*?å¸‚)?(?<county>[^å¿]+å¿|.+?åŒº|.+å¸‚|.+æ——|.+æµ·åŸŸ|.+å²›)?(?<town>[^åŒº]+é•‡|.+è¡—é“)?(?<village>.*)";
+			 String regex="(?<province>[^çœ]+è‡ªæ²»åŒº|.*?çœ|.*?è¡Œæ”¿åŒº)?(?<city>[^å¸‚]+è‡ªæ²»å·|.*?åœ°åŒº|.*?è¡Œæ”¿å•ä½|.+ç›Ÿ|å¸‚è¾–åŒº|.*?å¸‚)?(?<dist>[^å¿]+å¿|.+?åŒº|.+å¸‚|.+æ——|.+æµ·åŸŸ|.+å²›)?(?<town>[^åŒº]+é•‡|.+è¡—é“|.+ä¹¡|.+å¿)?(?<village>[^æ‘]+è·¯|.+è¡—|.+å··|.+é“|.+æ®µ|.+é˜Ÿ|.+å¼„|.+èƒ¡åŒ|.+æ‘|.+å§”ä¼š|.+å¼€å‘åŒº)?(?<number>[^åŒºå·]+å·)?(?<road>.*)";
 				
 			 Pattern pattern=Pattern.compile(regex);
 			 Matcher matcher=pattern.matcher(info);
@@ -159,7 +159,7 @@ public class Util {
 		 }
 		
 		
-		//Ö±Ï½ÊĞµÄÇé¿ö
+		//ç›´è¾–å¸‚çš„æƒ…å†µ
 		 if(addressList.get(0).equals("")&&!addressList.get(1).equals("")){
   		   String pro=addressList.get(1).substring(0,2);
   		   addressList.set(0,pro);
